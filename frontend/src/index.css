@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #F5E6D3; /* Cream / Beige */
+  --color-brand-secondary: #FFB347; /* Gold / Orange active */
+  --color-brand-dark: #1F3B2C; /* Dark green */
+  --color-brand-surface: rgba(15, 23, 19, 0.7); /* Dark semi-transparent for glass */
+  --color-brand-light: #FFFFFF;
+  
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Rhodium Libre", serif;
+}
+
+@layer base {
+  :root {
+    --background: #1F3B2C; /* Deep green */
+    --foreground: #F5E6D3; /* Cream */
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Since it's a full-screen app */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(20, 25, 20, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(245, 230, 211, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  .glass-button {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(245, 230, 211, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-button:hover {
+    background: rgba(245, 230, 211, 0.1);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #F5E6D3 0%, #FFB347 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
